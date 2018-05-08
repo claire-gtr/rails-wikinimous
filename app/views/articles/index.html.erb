@@ -1,0 +1,13 @@
+<h1>My articles</h1>
+<ul>
+<% @articles.each do |article| %>
+<li><h3><%= link_to article.title, article_path(article) %></h3>
+<h6><%= article.content %></h6>
+<p><%= link_to "Edit article", edit_article_path(article) %></p>
+<p><%= link_to "Destroy article", article_path(article), method: :delete,
+      data: { confirm: "Are you sure?" }  %></p>
+</li>
+<% end %>
+</ul>
+
+
